@@ -1,0 +1,43 @@
+{
+  "name": "co2opt-web-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "cy:test": "npx cypress run",
+    "cy:regression": "npx cypress open --env tags='@regression'",
+    "cy:sanity": "npx cypress open --env tags='@sanity'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@4tw/cypress-drag-drop": "^2.2.4",
+    "cy-verify-downloads": "^0.2.3",
+    "cypress": "^12.17.4",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-mochawesome-reporter": "^3.7.0",
+    "cypress-multi-reporters": "^1.6.4",
+    "cypress-xpath": "^2.0.1",
+    "mochawesome": "^7.1.3",
+    "multiple-cucumber-html-reporter": "^3.5.0"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.5",
+    "@cypress/browserify-preprocessor": "latest",
+    "fs": "^0.0.1-security"
+  },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true,
+      "output": "cypress/cucumber-json/cucumber-json.json",
+      "formatter": "cucumber-json-formatter"
+    },
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    },
+    "nonGlobalStepDefinitions": true
+  }
+}
